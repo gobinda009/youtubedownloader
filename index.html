@@ -219,7 +219,7 @@
             loader.style.display = "block"
             downloadLink.style.display = "none"
 
-            fetch('http://localhost:5000/getFormats', {
+            fetch('https://youtube-back-end.vercel.app:5000/getFormats', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ url })
