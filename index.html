@@ -219,11 +219,15 @@
             loader.style.display = "block"
             downloadLink.style.display = "none"
 
-            fetch('https://31d07e90-4a36-4411-a4d7-bc9e70704db1-dev.e1-us-east-azure.choreoapis.dev/default/youtube-gb/v1.0/getFormats', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ url })
-            })
+           fetch('https://31d07e90-4a36-4411-a4d7-bc9e70704db1-dev.e1-us-east-azure.choreoapis.dev/default/youtube-gb/v1.0/getFormats', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Test-Key': 'eyJraWQiOiJnYXRld2F5X2NlcnRpZmljYXRlX2FsaWFzIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI0ZWUyNWMwMS1iMzA3LTRhYWItYTE4NS1iMWQ0N2E5ZDBlZmNAY2FyYm9uLnN1cGVyIiwiYXVkIjoiY2hvcmVvOmRlcGxveW1lbnQ6c2FuZGJveCIsIm9yZ2FuaXphdGlvbiI6eyJ1dWlkIjoiMzFkMDdlOTAtNGEzNi00NDExLWE0ZDctYmM5ZTcwNzA0ZGIxIn0sImlzcyI6Imh0dHBzOlwvXC9zdHMuY2hvcmVvLmRldjo0NDNcL2FwaVwvYW1cL3B1Ymxpc2hlclwvdjJcL2FwaXNcL2ludGVybmFsLWtleSIsImtleXR5cGUiOiJTQU5EQk9YIiwic3Vic2NyaWJlZEFQSXMiOlt7InN1YnNjcmliZXJUZW5hbnREb21haW4iOm51bGwsIm5hbWUiOiJ5b3V0dWJlLWdiIC0gZGVmYXVsdC1lbmRwb2ludCIsImNvbnRleHQiOiJcLzMxZDA3ZTkwLTRhMzYtNDQxMS1hNGQ3LWJjOWU3MDcwNGRiMVwvZGVmYXVsdFwveW91dHViZS1nYlwvdjEuMCIsInB1Ymxpc2hlciI6ImNob3Jlb19wcm9kX2FwaW1fYWRtaW4iLCJ2ZXJzaW9uIjoidjEuMCIsInN1YnNjcmlwdGlvblRpZXIiOm51bGx9XSwiZXhwIjoxNzQ3MzM0MjA0LCJ0b2tlbl90eXBlIjoiSW50ZXJuYWxLZXkiLCJpYXQiOjE3NDczMzM2MDQsImp0aSI6IjdhMTZjNTRmLWZmYTItNDdiMi05ZThkLWJkNzUzOTQxNTQzZiJ9.igTTUfXgrTK6_e-sjLoobqMfVQIU0Qs3yKxOB75TXCbS9yHfoS4xJL_IwKrKsP6YIxhZLiqcKikqHzdvl2hQDdveuwMBncIpl3WvGifFcN00SYxA5yb2Olbez63Y7HcZqWgoI3i7z2y_1j9ZQS8O5UvdDq7COoYfshZf2_BlLhHZYRy0nfhYyGqFHsBzAghKu7EUBRT7O-zXmLW3FnlqwFKfsNbCvWFAEBhWR34gI5g22c1FXKQlB4IAp49fxaxjGkZkZ8LZ9GfCoDLdzZiVTwkFNIgFD7AJ--iKGuc2XDtM9QcblqGOT05w3FciutsYk3Q43iU2fIwiMWAeYdmPlt9b12a4zMOuA88Bollh1x_PCgJNgZ-M7vJacUOmeGxycLoDWNICYdFb78wyXe542-_Ez7JS2LttYSv_aGarpzjqht8kHeW8w-ETziKP96z_y6MaZmsX5JZZ6nebIftBF4KQo7wYW6wg8tsBwEfpwKiKD3-2Zk1QMGKOtiiqLV2M3ULJdKNPcrpA5rvITtBmq9ETnaQRlbzeGfYzaN6gNXeiLX3g24SBn-KtDO1YJRfD4UAhIyCMzx5DahMs0YNO_VC7FIwMwrestMcKdxNdXbdOJWsd-gBTxRPk7B7nAPNTTwJiMLAJCrgDsO1gKGeYxmAfhxWOETvZoMyMZOoLBLk'
+    },
+    body: JSON.stringify({ url })
+})
+
                 .then(res => res.json())
                 .then(data => {
                     loader.style.display = "none"
@@ -260,7 +264,7 @@
         }
 
         function downloadSelectedFormat(itag) {
-            const downloadUrl = `http://localhost:5000/download?url=${encodeURIComponent(selectedUrl)}&itag=${itag}`
+            const downloadUrl = `https://31d07e90-4a36-4411-a4d7-bc9e70704db1-dev.e1-us-east-azure.choreoapis.dev/default/youtube-gb/v1.0/download?url=${encodeURIComponent(selectedUrl)}&itag=${itag}`
             window.open(downloadUrl, '_blank')
         }
     </script>
